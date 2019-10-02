@@ -1,0 +1,6 @@
+@{
+  string Title = Model.WithoutSettings.String("Title");
+  string PageTitle = Context.String("Title") + (string.IsNullOrWhiteSpace(Title) ? string.Empty : " - " + Title);
+  string PageDescription = Context.String("Description");
+}
+@RenderBody()

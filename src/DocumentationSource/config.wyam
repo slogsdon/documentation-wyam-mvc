@@ -1,0 +1,30 @@
+#recipe Docs
+#theme ../DocumentationSource/theme
+
+FileSystem.InputPaths.Remove("input");
+FileSystem.InputPaths.Remove("theme");
+FileSystem.InputPaths.Add("../DocumentationSource/input");
+FileSystem.OutputPath = "wwwroot/_/documentation";
+
+// Customize your settings and add new ones here
+Settings[Keys.CleanOutputPath] = true;
+Settings[Keys.Host] = "developer.heartlandpaymentsystems.com";
+Settings[Keys.LinkRoot] = "/documentation";
+Settings[Keys.LinkHideIndexPages] = true;
+Settings[DocsKeys.Title] = "My Docs";
+
+// Add any pipeline customizations here
+// Cannot remove: Api, BlogPosts, RenderBlogPosts
+Pipelines.Remove("BlogIndexes");
+Pipelines.Remove("BlogCategories");
+Pipelines.Remove("BlogTags");
+Pipelines.Remove("BlogAuthors");
+Pipelines.Remove("BlogArchives");
+Pipelines.Remove("BlogYearlyArchives");
+Pipelines.Remove("BlogFeed");
+Pipelines.Remove("RenderApi");
+Pipelines.Remove("ApiIndex");
+Pipelines.Remove("ApiSearchIndex");
+Pipelines.Remove("Less");
+Pipelines.Remove("Sass");
+Pipelines.Remove("Resources");

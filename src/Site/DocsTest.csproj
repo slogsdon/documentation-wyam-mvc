@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Docs/**/*" />
+    <Watch Include="Docs/**/*" />
+  </ItemGroup>
+
+  <Target Name="BuildDocs" BeforeTargets="Build">
+    <Exec Command="dotnet wyam build -c ../DocumentationSource/config.wyam" />
+  </Target>
+
+</Project>
